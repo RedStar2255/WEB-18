@@ -1,0 +1,64 @@
+h2 {
+    color: black;
+}
+
+#navbar {
+    border: solid black;
+    width: 95%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+}
+
+#back {
+    color: aliceblue;
+    background-color: darkorange;
+    border: solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+#front {
+    color: aliceblue;
+    background-color: darkorange;
+    border: solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+a {
+    text-decoration: none;
+    font-size: larger;
+    color: aliceblue;
+}
+
+#heading {
+    text-decoration: underline;
+    color: brown;
+    text-align: center;
+    width: 100%;
+}
+
+#formdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px
+}
+
+#main>div {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}

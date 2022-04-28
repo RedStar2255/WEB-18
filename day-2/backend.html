@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Back End</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Back End</h1>
+    </div>
+    <div id="formdiv">
+        <form>
+            <input type="text" placeholder="Enter Name" id="name">
+            <input type="text" placeholder="Image URL" id="url">
+            <input type="text" placeholder="Company Logo" id="logo">
+            <input type="text" placeholder="Role in the Company" id="role">
+            <input type="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var form = document.querySelector("form")
+    var investorsArr = JSON.parse(localStorage.getItem("investorsData")) || []
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        name = document.querySelector("#name").value
+        url = document.querySelector("#url").value
+        logo = document.querySelector("#logo").value
+        role = document.querySelector("#role").value
+        var obj = {
+            name: name,
+            url: url,
+            logo: logo,
+            role: role
+        }
+        investorsArr.push(obj)
+
+        localStorage.setItem("investorsData", JSON.stringify(investorsArr))
+        name = document.querySelector("#name").value = ""
+        url = document.querySelector("#url").value = ""
+        logo = document.querySelector("#logo").value = ""
+        role = document.querySelector("#role").value = ""
+
+    })
+</script>

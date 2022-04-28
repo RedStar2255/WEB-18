@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Front End</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        * {
+            text-align: center;
+        }
+        
+        #main>div>img:first-child {
+            width: 350px;
+            height: 300px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        #main>div>img:last-child {
+            width: 60%;
+            height: 55px;
+            margin: 0%;
+        }
+        
+        p {
+            margin: 0%;
+            font-size: large;
+        }
+        
+        h2 {
+            margin: 0%;
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Front End</h1>
+    </div>
+    <div id="main">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var investorsArr = JSON.parse(localStorage.getItem("investorsData"))
+    var main = document.querySelector("#main")
+
+
+    investorsArr.forEach(function(elem) {
+        console.log(elem.name)
+
+        var div = document.createElement("div")
+
+        var img = document.createElement("img")
+        img.setAttribute("src", elem.url)
+        var head = document.createElement("h2")
+        head.innerText = elem.name
+        var logo = document.createElement("img")
+        logo.setAttribute("src", elem.logo)
+        var role = document.createElement("p")
+        role.innerText = elem.role
+
+
+        div.append(img, head, role, logo)
+        main.append(div)
+    });
+</script>
